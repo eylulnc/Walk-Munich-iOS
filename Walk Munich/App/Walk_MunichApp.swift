@@ -12,6 +12,7 @@ struct Walk_MunichApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .tint(WalkMunichTheme.primary)
         }
     }
 }
