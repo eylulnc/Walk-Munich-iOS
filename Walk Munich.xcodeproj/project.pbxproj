@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B0BDCDC2F24FE3900E5138E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B0BDCDB2F24FE3900E5138E /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0B0BDC952F24E4B700E5138E /* Walk Munich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walk Munich.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B0BDCDB2F24FE3900E5138E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		0B0BDC8C2F24E4B700E5138E = {
 			isa = PBXGroup;
 			children = (
+				0B0BDCDB2F24FE3900E5138E /* .gitignore */,
 				0B0BDC972F24E4B700E5138E /* Walk Munich */,
 				0B0BDC962F24E4B700E5138E /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0BDCDC2F24FE3900E5138E /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

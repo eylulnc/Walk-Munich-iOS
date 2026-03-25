@@ -1,0 +1,27 @@
+/* Categories */
+"category_attraction" = "Attraction";
+"category_museum" = "Museum";
+"category_viewpoint" = "Viewpoint";
+"category_coffee" = "Coffee";
+"category_food" = "Food";
+"All" = "All";
+
+/* Tab Bar */
+"tab_explore" = "Explore";
+"tab_tours" = "Tours";
+"tab_map" = "Map";
+"tab_favorites" = "Favorites";
+"tab_settings" = "Settings";
+
+/* Section Headers */
+"section_your_favorites" = "Your Favorites";
+"section_explore_munich" = "Explore Munich";
+"section_recently_viewed" = "Recently Viewed";
+
+/* Actions */
+"See All" = "See All";
+"Searching..." = "Searching...";
+
+/* Search */
+"search_no_results" = "No results for \"%@\"";
+
