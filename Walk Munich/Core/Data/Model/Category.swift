@@ -9,9 +9,9 @@
 import SwiftUI
 
 enum Category: String, Codable, CaseIterable {
-    case landmark
-    case museum
-    case viewpoint
-    case coffee
-    case food
+    case landmark = "LANDMARK"
+    case museum = "MUSEUM"
+    case viewpoint = "VIEWPOINT"
+    case coffee = "COFFEE"
+    case food = "FOOD"
 }
