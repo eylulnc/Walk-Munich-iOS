@@ -37,7 +37,7 @@ struct PlaceCardSmall: View {
                     Text(place.name)
                         .font(.subheadline.bold())
                         .foregroundStyle(.primary)
-                        .lineLimit(2)
+                        .lineLimit(1)
                         .fixedSize(horizontal: false, vertical: true)
 
                     Label(place.category.ui.title, systemImage: place.category.ui.systemImageName)
