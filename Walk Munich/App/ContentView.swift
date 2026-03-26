@@ -8,32 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        TabView {
+    @State private var selectedTab: AppTab = .explore
 
-            ExploreNavigation()
+    var body: some View {
+        TabView(selection: $selectedTab) {
+
+            ExploreNavigation(selectedTab: $selectedTab)
                 .tabItem {
                     Label(AppTab.explore.title,
                           systemImage: AppTab.explore.systemImage)
                 }
+                .tag(AppTab.explore)
 
             ToursNavigation()
                 .tabItem {
                     Label(AppTab.tours.title,
                           systemImage: AppTab.tours.systemImage)
                 }
+                .tag(AppTab.tours)
 
             FavoritesNavigation()
                 .tabItem {
                     Label(AppTab.favorites.title,
                           systemImage: AppTab.favorites.systemImage)
                 }
+                .tag(AppTab.favorites)
 
             SettingsNavigation()
                 .tabItem {
                     Label(AppTab.settings.title,
                           systemImage: AppTab.settings.systemImage)
                 }
+                .tag(AppTab.settings)
         }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreView: View {
     @Bindable var viewModel: ExploreViewModel
     @Binding var path: NavigationPath
+    let onSeeAllFavorites: () -> Void
 
     var body: some View {
         Group {
@@ -62,6 +63,8 @@ struct ExploreView: View {
                 if let highlighted = viewModel.highlightedPlace {
                     HighlightSectionView(
                         place: highlighted,
+                        isFavorite: viewModel.isFavorite(highlighted.id),
+                        onFavoriteTap: { viewModel.toggleFavorite(highlighted.id) },
                         onTap: { navigate(to: highlighted) }
                     )
                 }
@@ -73,7 +76,7 @@ struct ExploreView: View {
                         favoritePlaceIds: viewModel.favoritePlaceIds,
                         onPlaceTap: navigate(to:),
                         onFavoriteTap: { viewModel.toggleFavorite($0.id) },
-                        onSeeAll: {}
+                        onSeeAll: onSeeAllFavorites
                     )
                 }
 
