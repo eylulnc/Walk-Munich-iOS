@@ -1,0 +1,41 @@
+/* App */
+"app_title" = "Walk Munich";
+
+/* Tabs */
+"tab_explore" = "Explore";
+"tab_tours" = "Tours";
+"tab_map" = "Map";
+"tab_favorites" = "Favorites";
+"tab_settings" = "Settings";
+
+/* Explore */
+"search_prompt" = "Search places...";
+"loading_places" = "Loading places...";
+"retry" = "Retry";
+"see_all" = "See All";
+
+/* Sections */
+"section_explore_munich" = "Explore Munich";
+"section_highlight_of_the_day" = "Highlight of the Day";
+"section_your_favorites" = "Your Favorites";
+"section_recently_viewed" = "Recently Viewed";
+
+/* Search */
+"searching" = "Searching...";
+"no_results_for %@" = "No results for \"%@\"";
+
+/* Favorites screen */
+"favorites_title" = "Favorites";
+"favorites_empty_title" = "No favorites yet";
+"favorites_empty_subtitle" = "Tap the heart on any place to save it here.";
+
+/* Place Detail */
+"highlights" = "Highlights";
+"fun_facts" = "Fun Facts";
+
+/* Categories */
+"category_attraction" = "Attraction";
+"category_museum" = "Museum";
+"category_viewpoint" = "Viewpoint";
+"category_coffee" = "Coffee";
+"category_food" = "Food";

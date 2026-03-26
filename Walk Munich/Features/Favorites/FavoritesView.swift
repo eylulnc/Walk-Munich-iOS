@@ -22,7 +22,7 @@ struct FavoritesView: View {
                 listView
             }
         }
-        .navigationTitle("Favorites")
+        .navigationTitle("favorites_title")
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -73,10 +73,10 @@ struct FavoritesView: View {
             Image(systemName: "heart")
                 .font(.system(size: 48))
                 .foregroundStyle(.secondary)
-            Text("No favorites yet")
+            Text("favorites_empty_title")
                 .font(.headline)
                 .foregroundStyle(.secondary)
-            Text("Tap the heart on any place to save it here.")
+            Text("favorites_empty_subtitle")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)

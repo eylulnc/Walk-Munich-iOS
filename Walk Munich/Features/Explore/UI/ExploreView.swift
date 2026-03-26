@@ -31,14 +31,14 @@ struct ExploreView: View {
                 mainContent
             }
         }
-        .navigationTitle("Walk Munich")
+        .navigationTitle("app_title")
         .navigationBarTitleDisplayMode(.large)
         .searchable(
             text: Binding(
                 get: { viewModel.searchQuery },
                 set: { viewModel.updateSearch($0) }
             ),
-            prompt: "Search places..."
+            prompt: "search_prompt"
         )
     }
 
@@ -102,7 +102,7 @@ struct ExploreView: View {
         VStack(spacing: Spacing.medium) {
             ProgressView()
                 .scaleEffect(1.2)
-            Text("Loading places...")
+            Text("loading_places")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -118,7 +118,7 @@ struct ExploreView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-            Button("Retry") {
+            Button("retry") {
                 Task { await viewModel.loadPlaces() }
             }
             .buttonStyle(.borderedProminent)

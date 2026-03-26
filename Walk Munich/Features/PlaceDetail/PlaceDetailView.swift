@@ -23,7 +23,7 @@ struct PlaceDetailView: View {
                     Text(errorMessage)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
-                    Button("Retry") { Task { await viewModel.loadPlace() } }
+                    Button("retry") { Task { await viewModel.loadPlace() } }
                 }
                 .padding(Spacing.large)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -131,7 +131,7 @@ private struct StoryContent: View {
 
             if let facts = place.facts, !facts.isEmpty {
                 ExpandableSection(
-                    title: "Fun Facts",
+                    title: String(localized: "fun_facts"),
                     content: facts.map { "• \($0.text)" }.joined(separator: "\n")
                 )
             }
@@ -158,7 +158,7 @@ private struct HighlightsSection: View {
         VStack(alignment: .leading, spacing: Spacing.small) {
             Spacer().frame(height: Spacing.large)
 
-            Text("Highlights")
+            Text("highlights")
                 .font(.headline)
                 .foregroundStyle(.primary)
 

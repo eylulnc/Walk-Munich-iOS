@@ -16,7 +16,7 @@ struct FavoritesSectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
-            SectionHeader(title: "Your Favorites", onSeeAll: onSeeAll)
+            SectionHeader("section_your_favorites", onSeeAll: onSeeAll)
                 .padding(.horizontal, Spacing.medium)
 
             ScrollView(.horizontal, showsIndicators: false) {

@@ -15,7 +15,7 @@ struct HighlightSectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
-            Text("Highlight of the Day")
+            Text("section_highlight_of_the_day")
                 .font(.title3.bold())
                 .padding(.horizontal, Spacing.medium)
 

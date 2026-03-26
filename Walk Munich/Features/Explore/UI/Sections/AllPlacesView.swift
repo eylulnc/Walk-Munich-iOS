@@ -35,7 +35,7 @@ struct AllPlacesView: View {
                 .padding(Spacing.medium)
             }
         }
-        .navigationTitle("Explore Munich")
+        .navigationTitle("section_explore_munich")
         .navigationBarTitleDisplayMode(.inline)
     }
 
