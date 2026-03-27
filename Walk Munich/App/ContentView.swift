@@ -27,6 +27,13 @@ struct ContentView: View {
                 }
                 .tag(AppTab.tours)
 
+            MapNavigation()
+                .tabItem {
+                    Label(AppTab.map.title,
+                          systemImage: AppTab.map.systemImage)
+                }
+                .tag(AppTab.map)
+
             FavoritesNavigation()
                 .tabItem {
                     Label(AppTab.favorites.title,
