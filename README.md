@@ -48,7 +48,7 @@ Instead of juggling notes, maps, and screenshots, the goal is one app where you 
 
 |Explore | Search | Place Detail |Tour List | Tour Detail |
 |---------|-------|--------------|-----------|-------------|
-| ![Explore](/ss/explore.png) | ![Search](/ss/search.png) | ![Place Detail](/screenshots/detail.png) | ![Tours](/ss/tour.png) | ![Tour Detail](/ss/tour_detail.png) |
+| ![Explore](/ss/explore.png) | ![Search](/ss/search.png) | ![Place Detail](/ss/detail.png) | ![Tours](/ss/tour.png) | ![Tour Detail](/ss/tour_detail.png) |
 
 
 | Map | Map Detail | Favorites | Favorites Grid | Settings |
