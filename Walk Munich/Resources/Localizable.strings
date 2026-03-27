@@ -38,6 +38,34 @@
 "tour_header_subtitle" = "Choose an itinerary and discover the city's best places at your own pace.";
 "tour_itinerary" = "Itinerary";
 
+/* Settings */
+"settings_title" = "Settings";
+"settings_appearance" = "Appearance";
+"settings_dark_mode" = "Dark Mode";
+"settings_data" = "Data";
+"settings_clear_recently_viewed" = "Clear Recently Viewed";
+"settings_clear_favorites" = "Clear All Favorites";
+"settings_about_section" = "About";
+"settings_about_app" = "About App";
+"settings_version" = "Version";
+
+/* About */
+"about_app_description_title" = "App Description";
+"about_app_description_content" = "Walk Munich is a curated city guide designed to help you discover interesting places and walking routes while exploring Munich.\n\nThe routes and recommendations presented in the app are personally curated suggestions, based on individual exploration, research, and personal interest.\n\nThe app focuses on walkable experiences, cultural highlights, and local spots, presented in a simple and enjoyable way.";
+"about_disclaimer_title" = "Disclaimer";
+"about_disclaimer_content" = "Walk Munich is a non-commercial, personal project created for learning, experimentation, and portfolio purposes.\n\nIt is not an official city guide and is not affiliated with the City of Munich, local authorities, or any tourism organization.\n\nRoutes, place descriptions, and recommendations reflect personal suggestions and may not be complete, up to date, or suitable for every user.\n\nAll information is provided \"as is\" without any guarantees regarding accuracy or reliability.";
+"about_attribution_title" = "Attribution & Sources";
+"about_attribution_content" = "Images, place information, and background content used in this app come from publicly available sources and open references.\n\nWhere applicable, sources and attributions are included.\n\nIf you believe any content is incorrectly attributed or should be removed, please get in touch.";
+"about_impressum_title" = "Impressum";
+"about_impressum_content" = "Developer: Eylül Naz Can\nPurpose: Personal / educational project\n\nThis app was created for learning, exploration, and portfolio purposes. It is an open-source project licensed under the MIT License.";
+"about_footer" = "An open-source project built with care and a passion for simple, thoughtful design.\n© 2026 Eylül Naz Can · MIT License";
+
+/* Alerts */
+"alert_clear_recently_viewed_message" = "This will remove all recently viewed places from your history.";
+"alert_clear_favorites_message" = "This will remove all your saved favorite places.";
+"alert_clear" = "Clear";
+"alert_cancel" = "Cancel";
+
 /* Categories */
 "category_attraction" = "Attraction";
 "category_museum" = "Museum";
