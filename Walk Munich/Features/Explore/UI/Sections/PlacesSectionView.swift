@@ -16,7 +16,7 @@ struct PlacesSectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
-            SectionHeader(title: "Explore Munich", onSeeAll: onSeeAll)
+            SectionHeader("section_explore_munich", onSeeAll: onSeeAll)
                 .padding(.horizontal, Spacing.medium)
 
             ScrollView(.horizontal, showsIndicators: false) {

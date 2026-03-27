@@ -21,17 +21,22 @@ final class ExploreViewModel {
     var searchQuery = ""
     var searchResults: [SearchResult] = []
     var isSearching = false
-    var favoritePlaceIds: Set<String> = []
-    var recentlyViewedPlaceIds: [String] = []
+
+    // MARK: - Preferences (shared source of truth)
+
+    private let preferences = UserPreferencesService.shared
+
+    var favoritePlaceIds: Set<String> { preferences.favoritePlaceIds }
+    var recentlyViewedPlaceIds: [String] { preferences.recentlyViewedPlaceIds }
 
     // MARK: - Derived
 
     var favoritePlaces: [Place] {
-        allPlaces.filter { favoritePlaceIds.contains(String($0.id)) }
+        allPlaces.filter { preferences.favoritePlaceIds.contains(String($0.id)) }
     }
 
     var recentlyViewedPlaces: [Place] {
-        recentlyViewedPlaceIds.compactMap { id in
+        preferences.recentlyViewedPlaceIds.compactMap { id in
             allPlaces.first { String($0.id) == id }
         }
     }
@@ -41,13 +46,9 @@ final class ExploreViewModel {
     private let service = PlacesService()
     private var searchTask: Task<Void, Never>?
 
-    private let favoritesKey = "favoritePlaceIds"
-    private let recentlyViewedKey = "recentlyViewedPlaceIds"
-
     // MARK: - Init
 
     init() {
-        loadPersistedData()
         Task { await loadPlaces() }
     }
 
@@ -126,35 +127,17 @@ final class ExploreViewModel {
     // MARK: - Favorites
 
     func toggleFavorite(_ placeId: Int64) {
-        let key = String(placeId)
-        if favoritePlaceIds.contains(key) {
-            favoritePlaceIds.remove(key)
-        } else {
-            favoritePlaceIds.insert(key)
-        }
-        UserDefaults.standard.set(Array(favoritePlaceIds), forKey: favoritesKey)
+        preferences.toggleFavorite(placeId)
     }
 
     func isFavorite(_ placeId: Int64) -> Bool {
-        favoritePlaceIds.contains(String(placeId))
+        preferences.isFavorite(placeId)
     }
 
     // MARK: - Recently Viewed
 
     func markRecentlyViewed(_ placeId: Int64) {
-        let key = String(placeId)
-        var ids = recentlyViewedPlaceIds.filter { $0 != key }
-        ids.insert(key, at: 0)
-        recentlyViewedPlaceIds = Array(ids.prefix(6))
-        UserDefaults.standard.set(recentlyViewedPlaceIds, forKey: recentlyViewedKey)
-    }
-
-    // MARK: - Persistence
-
-    private func loadPersistedData() {
-        let defaults = UserDefaults.standard
-        favoritePlaceIds = Set(defaults.stringArray(forKey: favoritesKey) ?? [])
-        recentlyViewedPlaceIds = defaults.stringArray(forKey: recentlyViewedKey) ?? []
+        preferences.addToRecentlyViewed(placeId)
     }
 }
 

@@ -15,7 +15,7 @@ struct RecentlyViewedSectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
-            Text("Recently Viewed")
+            Text("section_recently_viewed")
                 .font(.title3.bold())
                 .padding(.horizontal, Spacing.medium)
 

@@ -16,15 +16,15 @@ extension Category {
     var ui: CategoryUI {
         switch self {
         case .landmark:
-            return CategoryUI(title: "Attraction", systemImageName: "building.columns")
+            return CategoryUI(title: String(localized: "category_attraction"), systemImageName: "building.columns")
         case .museum:
-            return CategoryUI(title: "Museum", systemImageName: "building")
+            return CategoryUI(title: String(localized: "category_museum"), systemImageName: "building")
         case .viewpoint:
-            return CategoryUI(title: "Viewpoint", systemImageName: "binoculars")
+            return CategoryUI(title: String(localized: "category_viewpoint"), systemImageName: "binoculars")
         case .coffee:
-            return CategoryUI(title: "Coffee", systemImageName: "cup.and.saucer")
+            return CategoryUI(title: String(localized: "category_coffee"), systemImageName: "cup.and.saucer")
         case .food:
-            return CategoryUI(title: "Food", systemImageName: "fork.knife")
+            return CategoryUI(title: String(localized: "category_food"), systemImageName: "fork.knife")
         }
     }
 }

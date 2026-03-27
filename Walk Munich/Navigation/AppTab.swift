@@ -18,15 +18,15 @@ enum AppTab: CaseIterable {
     var title: String {
         switch self {
         case .explore:
-            return "Explore"
+            return String(localized: "tab_explore")
         case .tours:
-            return "Tours"
+            return String(localized: "tab_tours")
         case .map:
-            return "Map"
+            return String(localized: "tab_map")
         case .favorites:
-            return "Favorites"
+            return String(localized: "tab_favorites")
         case .settings:
-            return "Settings"
+            return String(localized: "tab_settings")
         }
     }
 

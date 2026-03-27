@@ -2,16 +2,23 @@
 //  FavoritesNavigation.swift
 //  Walk Munich
 //
-//  Created by Eylul Naz Can on 24.01.2026.
-//
-
 
 import SwiftUI
 
 struct FavoritesNavigation: View {
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationStack {
-            FavoritesView()
+        NavigationStack(path: $path) {
+            FavoritesView(onPlaceTap: { id in path.append(Route.placeDetail(id)) })
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
+                    case .placeDetail(let id):
+                        PlaceDetailView(placeId: id)
+                    case .allPlaces:
+                        EmptyView()
+                    }
+                }
         }
     }
 }

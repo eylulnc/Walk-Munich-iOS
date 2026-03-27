@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreView: View {
     @Bindable var viewModel: ExploreViewModel
     @Binding var path: NavigationPath
+    let onSeeAllFavorites: () -> Void
 
     var body: some View {
         Group {
@@ -30,14 +31,14 @@ struct ExploreView: View {
                 mainContent
             }
         }
-        .navigationTitle("Walk Munich")
+        .navigationTitle("app_title")
         .navigationBarTitleDisplayMode(.large)
         .searchable(
             text: Binding(
                 get: { viewModel.searchQuery },
                 set: { viewModel.updateSearch($0) }
             ),
-            prompt: "Search places..."
+            prompt: "search_prompt"
         )
     }
 
@@ -62,6 +63,8 @@ struct ExploreView: View {
                 if let highlighted = viewModel.highlightedPlace {
                     HighlightSectionView(
                         place: highlighted,
+                        isFavorite: viewModel.isFavorite(highlighted.id),
+                        onFavoriteTap: { viewModel.toggleFavorite(highlighted.id) },
                         onTap: { navigate(to: highlighted) }
                     )
                 }
@@ -73,7 +76,7 @@ struct ExploreView: View {
                         favoritePlaceIds: viewModel.favoritePlaceIds,
                         onPlaceTap: navigate(to:),
                         onFavoriteTap: { viewModel.toggleFavorite($0.id) },
-                        onSeeAll: {}
+                        onSeeAll: onSeeAllFavorites
                     )
                 }
 
@@ -99,7 +102,7 @@ struct ExploreView: View {
         VStack(spacing: Spacing.medium) {
             ProgressView()
                 .scaleEffect(1.2)
-            Text("Loading places...")
+            Text("loading_places")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -115,7 +118,7 @@ struct ExploreView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-            Button("Retry") {
+            Button("retry") {
                 Task { await viewModel.loadPlaces() }
             }
             .buttonStyle(.borderedProminent)

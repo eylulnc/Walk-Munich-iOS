@@ -27,7 +27,7 @@ struct SectionHeader: View {
                 .font(.title3.bold())
             Spacer()
             if let onSeeAll {
-                Button("See All", action: onSeeAll)
+                Button("see_all", action: onSeeAll)
                     .font(.subheadline)
                     .foregroundStyle(WalkMunichTheme.primary)
             }

@@ -9,40 +9,54 @@ import SwiftUI
 
 struct HighlightSectionView: View {
     let place: Place
+    let isFavorite: Bool
+    let onFavoriteTap: () -> Void
     let onTap: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
-            Text("Highlight of the Day")
+            Text("section_highlight_of_the_day")
                 .font(.title3.bold())
                 .padding(.horizontal, Spacing.medium)
 
             Button(action: onTap) {
-                ZStack(alignment: .bottomLeading) {
-                    placeImage
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 200)
-                        .clipped()
+                ZStack(alignment: .topTrailing) {
+                    ZStack(alignment: .bottomLeading) {
+                        placeImage
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 200)
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+
+                        LinearGradient(
+                            colors: [.clear, .black.opacity(0.7)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                         .clipShape(RoundedRectangle(cornerRadius: 16))
 
-                    LinearGradient(
-                        colors: [.clear, .black.opacity(0.7)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-
-                    VStack(alignment: .leading, spacing: Spacing.extraSmall) {
-                        if let story = place.story {
-                            Text(story.mainTitle)
-                                .font(.caption)
-                                .foregroundStyle(.white.opacity(0.8))
+                        VStack(alignment: .leading, spacing: Spacing.extraSmall) {
+                            if let story = place.story {
+                                Text(story.mainTitle)
+                                    .font(.caption)
+                                    .foregroundStyle(.white.opacity(0.8))
+                            }
+                            Text(place.name)
+                                .font(.title3.bold())
+                                .foregroundStyle(.white)
                         }
-                        Text(place.name)
-                            .font(.title3.bold())
-                            .foregroundStyle(.white)
+                        .padding(Spacing.medium)
                     }
-                    .padding(Spacing.medium)
+
+                    Button(action: onFavoriteTap) {
+                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                            .font(.callout)
+                            .foregroundStyle(isFavorite ? .red : .white)
+                            .padding(Spacing.small)
+                            .background(Color.black.opacity(0.15))
+                            .clipShape(Circle())
+                    }
+                    .padding(Spacing.small)
                 }
             }
             .buttonStyle(.plain)

@@ -22,7 +22,7 @@ struct SearchResultsSection: View {
             if isSearching {
                 VStack {
                     Spacer()
-                    ProgressView("Searching...")
+                    ProgressView("searching")
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
@@ -32,7 +32,7 @@ struct SearchResultsSection: View {
                     Image(systemName: "magnifyingglass")
                         .font(.largeTitle)
                         .foregroundStyle(.secondary)
-                    Text("No results for \"\(query)\"")
+                    Text("no_results_for \(query)")
                         .font(.headline)
                         .foregroundStyle(.secondary)
                     Spacer()
