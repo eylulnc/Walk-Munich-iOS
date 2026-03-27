@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct Walk_MunichApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .tint(WalkMunichTheme.primary)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }

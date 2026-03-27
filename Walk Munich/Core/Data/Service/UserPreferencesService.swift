@@ -45,4 +45,14 @@ final class UserPreferencesService {
         recentlyViewedPlaceIds = Array(ids.prefix(6))
         UserDefaults.standard.set(recentlyViewedPlaceIds, forKey: recentlyViewedKey)
     }
+
+    func clearRecentlyViewed() {
+        recentlyViewedPlaceIds = []
+        UserDefaults.standard.removeObject(forKey: recentlyViewedKey)
+    }
+
+    func clearFavorites() {
+        favoritePlaceIds = []
+        UserDefaults.standard.removeObject(forKey: favoritesKey)
+    }
 }
