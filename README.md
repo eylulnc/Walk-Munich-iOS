@@ -1,68 +1,81 @@
 # Walk Munich – iOS
 
-**Walk Munich** is an iOS app I’m building to create and organize walking routes in Munich.  
-The goal is to make it easier to plan small itineraries for friends, family, and visitors when showing them around the city.
+Walk Munich is an iOS app for discovering and exploring Munich.
+It helps you find interesting places, browse curated walking routes, and navigate between stops, all using native Apple frameworks with no API key required.
 
-The app focuses on discovering interesting places, grouping them into walking routes, and exploring them in a simple, map-based interface — making it easier to experience Munich on foot.
-
-This project is **at a very early stage** and is being developed gradually as I learn and experiment with modern iOS development, SwiftUI architecture, and navigation patterns.
+It's still **a work in progress**, built as a personal project to learn and experiment with SwiftUI architecture, navigation patterns, and iOS best practices.
 
 ---
 
 ## 📍 Overview
 
-**Walk Munich** started as a personal side project to simplify how I plan sightseeing routes.  
-Instead of juggling notes, maps, and screenshots, the idea is to have one app where I can:
+Instead of juggling notes, maps, and screenshots, the goal is one app where you can:
 
-- Collect places worth visiting  
-- Group them into walking routes  
-- Add short stories, highlights, or historical notes for each stop  
-
-The iOS version is built from scratch using **SwiftUI** and follows a **feature-based architecture**, inspired by modern Android apps but adapted to iOS conventions and best practices.
+- Discover places worth visiting, filtered by category
+- Browse and follow curated walking routes
+- View place details with descriptions and photos
+- Save favorites and revisit recently viewed places
+- See all places on an interactive map with category markers
+- Navigate directly to any place via Apple Maps
 
 ---
 
-## 🚧 Planned Features
+## ⚙️ Current Features
 
-- Explore places in Munich  
-- Browse curated walking routes  
-- Create and save custom walking routes  
-- View place details with descriptions, photos, and highlights  
-- Favorites  
-- Map-based navigation using Apple MapKit  
-- Filtering and categorization of places and routes  
-- Continuous UI/UX improvements  
+- **Explore** — Full place list with category chip filtering, highlights, recently viewed, and favorites sections
+- **Place Detail** — Photo, description, highlights, and coordinates for each stop
+- **Tours** — Browse curated walking itineraries with a full tour detail view
+- **Map** — Interactive MapKit map with color-coded category markers; tap a pin to preview a place and open walking directions in Apple Maps
+- **Favorites** — Save and manage favorite places
+- **Settings** — App preferences and About section
 
 ---
 
 ## 🧱 Tech Stack
 
-- **Language:** Swift  
-- **UI:** SwiftUI  
-- **Navigation:** `TabView` + `NavigationStack`  
-- **Architecture:** Feature-based structure  
-- **Maps:** Apple MapKit  
-
-The project intentionally starts simple and evolves step by step as new requirements and ideas emerge.
+- **Language:** Swift
+- **UI:** SwiftUI
+- **Navigation:** `TabView` + `NavigationStack` (route-based)
+- **Architecture:** MVVM, feature-based modular structure
+- **State Management:** `@Observable`, `@State`, `@Environment`
+- **Maps:** MapKit (no API key required)
+- **Location:** CoreLocation
+- **No external dependencies** — built entirely with native Apple frameworks
 
 ---
 
 ## 📸 Preview
 
-Screenshots and UI previews will be added once the core structure and navigation flows are in place.
+| Explore | Search |
+|---------|--------|
+| ![Explore](/ss/explore.png) | ![Search](/ss/search.png) |
+
+| Tour List | Tour Detail |
+|-----------|-------------|
+| ![Tours](/ss/tour.png) | ![Tour Detail](/ss/tour_detail.png) |
+
+| Map | Map Detail | Favorites | Favorites Grid | Settings |
+|-----|------------|-----------|----------------|----------|
+| ![Map](/ss/map1.png) | ![Map Detail](/ss/map2.png) | ![Favorites](/ss/fav1.png) | ![Favorites Grid](/ss/fav2.png) | ![Settings](/ss/setting.png) |
+
+---
+
+## 🚧 Planned
+
+- Custom route creation and saving
+- Search across places and routes
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is developed for **educational and personal learning purposes** only.  
+This project is developed for **educational and personal learning purposes** only.
 It is not an official travel or navigation app and does not guarantee the accuracy of location or historical information.
-
-All content and media used within the app are intended for non-commercial use as part of an ongoing learning project.
+All content and media are intended for non-commercial use as part of an ongoing learning project.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.  
+This project is licensed under the **MIT License**.
 You are free to use, modify, and distribute this project for learning or personal purposes, as long as proper credit is given.
