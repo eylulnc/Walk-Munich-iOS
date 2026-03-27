@@ -33,6 +33,11 @@
 "highlights" = "Highlights";
 "fun_facts" = "Fun Facts";
 
+/* Tours */
+"tour_header_title" = "Explore Munich Your Way";
+"tour_header_subtitle" = "Choose an itinerary and discover the city's best places at your own pace.";
+"tour_itinerary" = "Itinerary";
+
 /* Categories */
 "category_attraction" = "Attraction";
 "category_museum" = "Museum";
