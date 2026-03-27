@@ -66,6 +66,12 @@
 "alert_clear" = "Clear";
 "alert_cancel" = "Cancel";
 
+/* Map */
+"map_my_location" = "My location";
+"map_legend" = "Map legend";
+"map_legend_title" = "Categories";
+"map_legend_close" = "Close";
+
 /* Categories */
 "category_attraction" = "Attraction";
 "category_museum" = "Museum";
