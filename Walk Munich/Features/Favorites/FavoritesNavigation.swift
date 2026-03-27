@@ -17,6 +17,8 @@ struct FavoritesNavigation: View {
                         PlaceDetailView(placeId: id)
                     case .allPlaces:
                         EmptyView()
+                    case .tourDetail(_):
+                        EmptyView()
                     }
                 }
         }

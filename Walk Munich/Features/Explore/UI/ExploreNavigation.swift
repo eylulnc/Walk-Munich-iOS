@@ -25,6 +25,8 @@ struct ExploreNavigation: View {
                     PlaceDetailView(placeId: id)
                 case .allPlaces:
                     AllPlacesView(viewModel: viewModel, path: $path)
+                case .tourDetail(_):
+                    EmptyView()
                 }
             }
         }
