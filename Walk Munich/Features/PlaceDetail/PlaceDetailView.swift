@@ -28,25 +28,17 @@ struct PlaceDetailView: View {
                 .padding(Spacing.large)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let place = viewModel.place {
-                PlaceDetailContent(place: place)
-            }
-        }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("")
-        .toolbarBackground(.hidden, for: .navigationBar)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                CircleHeroButton(systemImage: "chevron.left", action: { dismiss() })
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                CircleHeroButton(
-                    systemImage: viewModel.isFavorite ? "heart.fill" : "heart",
-                    tint: viewModel.isFavorite ? .red : .white,
-                    action: viewModel.toggleFavorite
+                PlaceDetailContent(
+                    place: place,
+                    isFavorite: viewModel.isFavorite,
+                    onBack: { dismiss() },
+                    onFavoriteTap: viewModel.toggleFavorite
                 )
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("")
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
 
@@ -63,7 +55,8 @@ private struct CircleHeroButton: View {
                 .font(.callout.bold())
                 .foregroundStyle(tint)
                 .padding(Spacing.small)
-                .background(Color.black.opacity(0.35))
+                .frame(width: 40, height: 40)
+                .background(Color.black.opacity(0.15))
                 .clipShape(Circle())
         }
     }
@@ -73,31 +66,50 @@ private struct CircleHeroButton: View {
 
 private struct PlaceDetailContent: View {
     let place: Place
+    let isFavorite: Bool
+    let onBack: () -> Void
+    let onFavoriteTap: () -> Void
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                // Hero image
-                ZStack {
-                    if UIImage(named: place.imageUrl) != nil {
-                        Image(place.imageUrl)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } else {
-                        PlaceholderImageView()
+        GeometryReader { proxy in
+            ScrollView {
+                VStack(spacing: 0) {
+                    ZStack(alignment: .top) {
+                        ZStack {
+                            if UIImage(named: place.imageUrl) != nil {
+                                Image(place.imageUrl)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } else {
+                                PlaceholderImageView()
+                            }
+                        }
+                        .frame(height: 300)
+                        .clipped()
+
+                        HStack {
+                            CircleHeroButton(systemImage: "chevron.left", action: onBack)
+                            Spacer()
+                            CircleHeroButton(
+                                systemImage: isFavorite ? "heart.fill" : "heart",
+                                tint: isFavorite ? .red : .white,
+                                action: onFavoriteTap
+                            )
+                        }
+                        .padding(.horizontal, Spacing.medium)
+                        .padding(.vertical, Spacing.small)
+                        .padding(.top, proxy.safeAreaInsets.top)
+                    }
+
+                    if let story = place.story {
+                        StoryContent(place: place, story: story)
+                            .offset(y: -28)
+                            .padding(.bottom, -28)
                     }
                 }
-                .frame(height: 300)
-                .clipped()
-
-                if let story = place.story {
-                    StoryContent(place: place, story: story)
-                        .offset(y: -28)
-                        .padding(.bottom, -28)
-                }
             }
+            .ignoresSafeArea(edges: .top)
         }
-        .ignoresSafeArea(edges: .top)
     }
 }
 
