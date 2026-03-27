@@ -9,9 +9,25 @@
 import SwiftUI
 
 struct ToursNavigation: View {
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationStack {
-            ToursView()
+        NavigationStack(path: $path) {
+            ToursView(onTourTap: { id in
+                path.append(Route.tourDetail(id))
+            })
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .tourDetail(let id):
+                    TourDetailView(tourId: id) { placeId in
+                        path.append(Route.placeDetail(placeId))
+                    }
+                case .placeDetail(let id):
+                    PlaceDetailView(placeId: id)
+                case .allPlaces:
+                    EmptyView()
+                }
+            }
         }
     }
 }

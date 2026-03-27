@@ -8,4 +8,5 @@
 enum Route: Hashable {
     case placeDetail(Int64)
     case allPlaces
+    case tourDetail(Int64)
 }
