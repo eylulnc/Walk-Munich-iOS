@@ -82,7 +82,7 @@ struct PlaceCard: View {
                 .font(.callout)
                 .foregroundStyle(isFavorite ? Color.red : Color.white)
                 .padding(Spacing.small)
-                .background(Color.black.opacity(0.35))
+                .background(Color.black.opacity(0.15))
                 .clipShape(Circle())
         }
     }

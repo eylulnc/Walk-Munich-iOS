@@ -53,7 +53,7 @@ struct HighlightSectionView: View {
                             .font(.callout)
                             .foregroundStyle(isFavorite ? .red : .white)
                             .padding(Spacing.small)
-                            .background(Color.black.opacity(0.35))
+                            .background(Color.black.opacity(0.15))
                             .clipShape(Circle())
                     }
                     .padding(Spacing.small)

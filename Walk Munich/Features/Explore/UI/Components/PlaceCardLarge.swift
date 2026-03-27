@@ -24,7 +24,7 @@ struct PlaceCardLarge: View {
                             .font(.caption)
                             .foregroundStyle(isFavorite ? .red : .white)
                             .padding(Spacing.small - 2)
-                            .background(Color.black.opacity(0.35))
+                            .background(Color.black.opacity(0.15))
                             .clipShape(Circle())
                     }
                     .padding(Spacing.small)
